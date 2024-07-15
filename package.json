@@ -1,8 +1,7 @@
-
-
+{
   "name": "json-js-html-css_project",
   "version": "1.0.0",
-  "description": "json server",
+  "description": "json-server",
   "main": "index.js",
   "scripts": {
     "test": "npm test"
