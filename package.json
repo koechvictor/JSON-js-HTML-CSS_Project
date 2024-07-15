@@ -1,0 +1,20 @@
+
+
+  "name": "json-js-html-css_project",
+  "version": "1.0.0",
+  "description": "json server",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/koechvictor/JSON-js-HTML-CSS_Project.git"
+  },
+  "author": "koechvictor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/koechvictor/JSON-js-HTML-CSS_Project/issues"
+  },
+  "homepage": "https://github.com/koechvictor/JSON-js-HTML-CSS_Project#readme"
+}
