@@ -24,6 +24,31 @@ function loadData() {
                 const soldTickets = document.createElement('p')
                 const span4 = document.createElement('span')
                 const btn = document.createElement('button')
+                btn.dataset.movieId = movie.id //store movie id as attribute
+                btn.addEventListener('click', function () {
+                    const accessbtn = this.dataset.movieId;
+
+                    let isPuchased = false;
+                    function togglepuchased() {
+                        if (isPuchased) {
+                            btn.textContent = 'puchase ticket'
+                            isPuchased = false
+
+                            //updating number of tickets every time its sold
+                            const updated_tickets = (`${movie.tickets_sold}` - 1)
+                            span4.textContent = updated_tickets
+                        }
+                        else {
+                            btn.textContent = 'puchased'
+                            isPuchased = true
+                        }
+                    }
+
+                    if (accessbtn) {
+                        togglepuchased()
+                    }
+                })
+
 
                 //add class to elements
                 bodyScope.classList.add('bodyScope')
@@ -62,17 +87,7 @@ function loadData() {
                 capacity.append(span3)
                 soldTickets.append(span4)
 
-                // const ticketPuchase = container.querySelector('button')
-                container.addEventListener('click', (e) => {
-                    if (e.target && e.target.tagName === 'BUTTON') {
-                        btn.textContent = "puchased"
-                    }
-                })
-
-            });
-        })
-        .catch(error => {
-            return error;
+            })
         })
 }
 loadData()
