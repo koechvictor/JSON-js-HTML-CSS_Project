@@ -1,4 +1,4 @@
-const container = document.getElementById('container')
+t container = document.getElementById('container')
 
 function loadData() {
     fetch('http://localhost:3000/films')
@@ -27,27 +27,14 @@ function loadData() {
                 btn.dataset.movieId = movie.id //store movie id as attribute
                 btn.addEventListener('click', function () {
                     const accessbtn = this.dataset.movieId;
-
-                    let isPuchased = false;
-                    function togglepuchased() {
-                        if (isPuchased) {
-                            btn.textContent = 'puchase ticket'
-                            isPuchased = false
-
-                            //updating number of tickets every time its sold
-                            const updated_tickets = (`${movie.tickets_sold}` - 1)
-                            span4.textContent = updated_tickets
-                        }
-                        else {
-                            btn.textContent = 'puchased'
-                            isPuchased = true
-                        }
+                    //alert('testing')
+                    const currentMT = movie.tickets_sold++;
+                    span4.textContent = currentMT
+                    if (currentMT > `${movie.capacity}`) {
+                        alert('no tickets left')
                     }
-
-                    if (accessbtn) {
-                        togglepuchased()
-                    }
-                })
+                }
+                )
 
 
                 //add class to elements
